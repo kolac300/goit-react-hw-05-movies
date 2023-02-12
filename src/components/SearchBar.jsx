@@ -3,16 +3,15 @@ import PropTypes from 'prop-types'
 import { Field, Formik, Form } from 'formik';
 import { toast } from 'react-hot-toast';
 
-export const SearchBar = ({ setSearch }) => {
+export const SearchBar = ({ setSearchParams }) => {
 
 	const onSubmit = (value, ections) => {
 		const { search } = value;
 		if (search.trim() === '' || search.trim().length > 30) {
 			toast.error('Invalid query');
 		} else {
-			setSearch(search)
+			setSearchParams({ q: search })
 			ections.resetForm();
-
 		}
 	};
 	return (
