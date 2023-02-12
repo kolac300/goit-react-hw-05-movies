@@ -1,9 +1,9 @@
-import { getReviews } from 'FakeAPI'
+import { getReviews } from 'API'
 import { nanoid } from 'nanoid'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-export const Reviews = () => {
+const Reviews = () => {
 	const [reviews, setReviews] = useState([])
 	const { id } = useParams()
 	useEffect(() => {
@@ -21,3 +21,4 @@ export const Reviews = () => {
 		}</ul> : <h1>we have not found any reviews</h1>
 	)
 }
+export default Reviews

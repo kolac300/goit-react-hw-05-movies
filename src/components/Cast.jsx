@@ -1,10 +1,9 @@
-import { getCredits } from 'FakeAPI'
-import { nanoid } from 'nanoid'
+import { getCredits } from 'API'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { StyledDiv } from './MoviesList.styled'
 
-export const Cast = () => {
+const Cast = () => {
 	const [cast, setCast] = useState([])
 	const { id } = useParams()
 	useEffect(() => {
@@ -14,7 +13,7 @@ export const Cast = () => {
 	}, [id])
 	return (
 		<StyledDiv>{
-			cast.map(actor => <li key={nanoid()}>
+			cast.map((actor, idx) => <li key={actor.id + idx}>
 				<img src={`https://www.themoviedb.org/t/p/w138_and_h175_face${actor.profile_path || '/uqqgAdPfi1TmG3tfKfhsf20fHE6.jpg'}`} alt="img" /><br />
 				name : {actor.name} <br />
 				character : {actor.character}<br />
@@ -24,4 +23,5 @@ export const Cast = () => {
 		}</StyledDiv>
 	)
 }
+export default Cast
 

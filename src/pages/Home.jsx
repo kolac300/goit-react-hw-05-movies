@@ -1,8 +1,8 @@
 import { MoviesList } from 'components/MoviesList'
-import { PopularToday } from 'FakeAPI'
+import { PopularToday } from 'API'
 import React, { useEffect, useState } from 'react'
 //loader, error 
-export const Home = () => {
+const Home = () => {
 	const [movies, setMovies] = useState([])
 	useEffect(() => {
 		PopularToday().then(movies => {
@@ -15,3 +15,4 @@ export const Home = () => {
 		</div>
 	)
 }
+export default Home

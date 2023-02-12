@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import { getDetails } from 'FakeAPI'
+import { getDetails } from 'API'
 import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom'
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
 	const [overwiev, setoverwiev] = useState()
 	const [poster, setPoster] = useState()
 	const { id } = useParams()
@@ -32,4 +32,4 @@ export const MovieDetails = () => {
 
 	)
 }
-// map id actors (take unic string) cast_ID
+export default MovieDetails
