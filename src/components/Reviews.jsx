@@ -17,7 +17,7 @@ const Reviews = () => {
 	}, [id])
 
 	// { isLoading &&}
-	return (<>{isLoading && reviews.length ? <ul>{reviews.map(review => <li key={review.id} >
+	return (<>{isLoading || reviews.length ? <ul>{reviews.map(review => <li key={review.id} >
 		<h3>author : {review.author}</h3>
 		<p>content : {review.content}</p>
 	</li>)
